@@ -30,6 +30,7 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 mydata <- mydata %>%
 mutate(across(where(is.character), as.factor))
 ```
+
 We change all the character variable to factor variables.The type of this problem needs a numerical variable called WORDSUM and a factor variable called RACE. We will be using a group of helper files to help us complete the analysis og Numerical and factorial variables.
 
 # Results
@@ -42,6 +43,13 @@ We change all the character variable to factor variables.The type of this proble
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+basicCN <- ggplot(mydata,aes(x=RACE,y=WORDSUM))
+
+basicCN + geom_boxplot()
+```
+
+By looking at the box plot graph, its not clear enough if there is a significant difference between the WHITE and other RACES. It also not clear is there is a difference between the BLACK and other RACES 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
